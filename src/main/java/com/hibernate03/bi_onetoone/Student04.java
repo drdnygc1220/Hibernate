@@ -59,7 +59,7 @@ public class Student04 {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
-                ", diary=" + diary +
+                //", diary=" + diary +//burayı silmezsek sonsuz döngüye girer yada student tablosundaki kısmı bir taraf silinmeli...
                 '}';
     }
 }
