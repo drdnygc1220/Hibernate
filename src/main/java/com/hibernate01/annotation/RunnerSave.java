@@ -37,8 +37,8 @@ public class RunnerSave {
         //transactionı commitlenmesi lazım.
         //transaction ile commit arasındaki olan seyler data base gönderecek.
 
-     // session.save(student1);//database gitti
-      //  session.save(student2);
+      //session.save(student1);//database gitti
+       //session.save(student2);
        // session.save(student3);
 
         tx.commit();

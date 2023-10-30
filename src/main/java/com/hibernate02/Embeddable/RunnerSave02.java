@@ -1,6 +1,5 @@
-package com.hibernate02.embeddable;
+package com.hibernate02.Embeddable;
 
-import com.hibernate01.annotation.Student01;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

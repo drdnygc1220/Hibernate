@@ -1,4 +1,4 @@
-package com.hibernate02.embeddable;
+package com.hibernate02.Embeddable;
 
 import javax.persistence.Embeddable;
 
