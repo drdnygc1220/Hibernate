@@ -29,7 +29,8 @@ public class RunnerFetch04 {
         System.out.println("-----------");
         System.out.println(diary.getStudent());//sadece student
 
-        //sadece günlüğü olan öğrenciler..INNER JOIN=Kesişim
+        //INNER JOIN=Kesişim
+        //TASK:sadece günlüğü olan öğrenciler..
         String hqlQuery1="SELECT s.name,d.name FROM Student04 s INNER JOIN FETCH Diary04 d ON s.id=d.student";
         //Hql de field isimleri(student) 1.java değişkenlerini kullanılırız yada;
         //Hql de 2.Java classlarını kullanırım.
@@ -49,6 +50,33 @@ public class RunnerFetch04 {
                     System.out.println(Arrays.toString(oa));
 
                 });
+
+        //HQL LEFT JOIN
+        //TASK:butun ogrenciler ve varsa bu ögrencilerin gunluk bilgilerini getir.
+        String hqlQuery2="SELECT s.name,d.name FROM Student04 s LEFT JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]> resultList2=session.createQuery(hqlQuery2).getResultList();
+        resultList2.forEach(oa->{
+                    System.out.println(Arrays.toString(oa));
+                });
+
+        //HQL RIGHT JOIN
+        //TASK:butun gunlukler ve varsa gunlugu olan öğrenciler gelsin.
+        String hqlQuery3="SELECT s.name,d.name FROM Student04 s RIGHT JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]>resultList3=session.createQuery(hqlQuery3).getResultList();
+        resultList3.forEach(oa->{
+            System.out.println(Arrays.toString(oa));
+        });
+
+        //FULL JOIN
+        //TASK:
+        String hqlQuery4="SELECT s.name,d.name FROM Student04 s FULL JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]>resultList4=session.createQuery(hqlQuery4).getResultList();
+        resultList4.forEach(oa->{
+            System.out.println(Arrays.toString(oa));
+        });
+
+
+
 
 
 
