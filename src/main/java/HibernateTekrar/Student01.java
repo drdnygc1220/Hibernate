@@ -1,22 +1,19 @@
-package com.hibernate06;
+package HibernateTekrar;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Transient;
 
 @Entity
-public class Book08 {
-
+public class Student01 {
     @Id
     private int id;
-
+    @Column(name = "student_name")
     private String name;
 
-    @ManyToMany(mappedBy = "bookList")
-    private List<Student08> students= new ArrayList<>();
+    @Transient
+    private int grade;
 
     public int getId() {
         return id;
@@ -34,19 +31,20 @@ public class Book08 {
         this.name = name;
     }
 
-    public List<Student08> getStudents() {
-        return students;
+    public int getGrade() {
+        return grade;
     }
 
-    public void setStudents(List<Student08> students) {
-        this.students = students;
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     @Override
     public String toString() {
-        return "Book08{" +
+        return "Student01{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", grade=" + grade +
                 '}';
     }
 }

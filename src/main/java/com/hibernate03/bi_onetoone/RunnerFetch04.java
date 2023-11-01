@@ -34,15 +34,13 @@ public class RunnerFetch04 {
         String hqlQuery1="SELECT s.name,d.name FROM Student04 s INNER JOIN FETCH Diary04 d ON s.id=d.student";
         //Hql de field isimleri(student) 1.java değişkenlerini kullanılırız yada;
         //Hql de 2.Java classlarını kullanırım.
-
-        //üstteki HQL in SQL halini yazalım..
-        //SQL de 1-Tablo isimlerini,2-Tablo hedırlarını kullanacagım...
-        //SELECT s.std_name,d.name FROM student04 s INNER JOIN  diary04 d ON s.id=d.std_id;
-
         List<Object[]> resultList =session.createQuery(hqlQuery1).getResultList();
         for(Object[] objects: resultList){
             System.out.println(Arrays.toString(objects));
         }
+        //üstteki HQL in SQL halini yazalım..
+        //SQL de 1-Tablo isimlerini,2-Tablo hedırlarını kullanacagım...
+        //SELECT s.std_name,d.name FROM student04 s INNER JOIN  diary04 d ON s.id=d.std_id;
 
         //okunabilirlik olması için lamba kullanmak daha mantıklı..
         //foreach lamba ile yapmak istersem
